@@ -81,7 +81,7 @@ def macBook():
 
 
 @app.route("/airPod")
-def method_name():
+def airPod():
     return render_template("airPod.html")
 
 

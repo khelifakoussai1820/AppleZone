@@ -152,12 +152,7 @@ section {
 }
 
 .description {
-    padding-left: 60px;
-}
-
-.etat {
-    color: rgb(18, 8, 87);
-    font-weight: bold;
+    text-align: center;
 }
 
 .command-link {
@@ -174,8 +169,9 @@ section {
 }
 
 .link:hover {
-    background-color: rgb(134, 45, 13);
+    background-color: rgb(198, 76, 32);
 }
+
 
 footer {
     background-color: rgb(0, 0, 0);
