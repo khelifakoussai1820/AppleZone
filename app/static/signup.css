@@ -5,13 +5,12 @@
 }
 
 html {
-    background-image: url('/static/pictures/backgroundMacBook.jpg');
+    background-image: url('pictures/backgroundMacBook.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 
 fieldset {

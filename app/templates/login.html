@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../static/css/signin.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='signin.css')}}">
 
 
 
@@ -20,14 +20,25 @@
 
 <body>
 
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
     <fieldset>
-        <form action="" method="post">
+        <form action="/login" method="post">
             <h1>LOGIN</h1>
 
             <div class="div1">
                 <p>E-mail</p>
                 <div class="input">
-                    <input type="email" placeholder=" e-mail" required>
+                    <input type="email" name="email" placeholder=" e-mail" required>
                     <i class="fa-solid fa-envelope"></i>
                 </div>
             </div>
@@ -36,7 +47,7 @@
             <div class="div1">
                 <p>Mot de passe</p>
                 <div class="input">
-                    <input type="password" placeholder=" password" minlength="8" required>
+                    <input type="password" name="password" placeholder=" password" minlength="8" required>
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <a id="forgot-password" href="">Mot de passe oublié ?</a>
@@ -44,7 +55,8 @@
 
 
             <div class="link-btn">
-                <p>Vous n'avez pas un compte ? <a id="link" id="link" href="signup.css" target="_blank">Créer un compte
+                <p>Vous n'avez pas un compte ? <a id="link" id="link" href="{{url_for('signup')}}" target="_blank">Créer
+                        un compte
                         ici</a>
                 </p>
                 <button type="submit">Se connecter</button>
